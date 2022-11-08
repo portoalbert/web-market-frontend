@@ -55,7 +55,7 @@ body{
   flex: 1;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
 }
 .links {
   display: flex;
@@ -66,4 +66,25 @@ a {
   list-style: none;
   text-decoration: none;
   color: inherit;
+}
+.footer {
+  background-color: black;
+  color: white;
+  grid-row: 11/11;
+  padding: 5px;
+}
+.footer a {
+  color: rgb(104, 104, 208);
+}
+.search {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.search img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.996)
 }

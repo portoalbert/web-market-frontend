@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import loginIcon from "../img/login.png";
+import wishListIcon from "../img/wishlist.png";
+import cartIcon from "../img/cart.png";
 
 export default function Navbar() {
   return (
@@ -14,6 +17,9 @@ export default function Navbar() {
       </div>
       <div className="search">
         <input type="text" name="search" placeholder="Search" />
+        <img src={loginIcon} alt="Login Icon" />
+        <img src={wishListIcon} alt="Wish List Icon" />
+        <img src={cartIcon} alt="Shopping Cart" />
       </div>
     </div>
   );
