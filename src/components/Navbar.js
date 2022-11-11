@@ -17,7 +17,9 @@ export default function Navbar() {
       </div>
       <div className="search">
         <input type="text" name="search" placeholder="Search" />
-        <img src={loginIcon} alt="Login Icon" />
+        <Link to="/login">
+          <img src={loginIcon} alt="Login Icon" />
+        </Link>
         <img src={wishListIcon} alt="Wish List Icon" />
         <img src={cartIcon} alt="Shopping Cart" />
       </div>

@@ -1,5 +1,11 @@
 import React from "react";
+import ItemList from "../components/ItemList";
 
 export default function Women() {
-  return <div>Women</div>;
+  return (
+    <div>
+      <h1>Woman</h1>
+      <ItemList />
+    </div>
+  );
 }

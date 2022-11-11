@@ -6,6 +6,7 @@ import Women from "./pages/Women";
 import Men from "./pages/Men.js";
 import Kids from "./pages/Kids.js";
 import PageFooter from "./components/PageFooter";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/men" element={<Men />} />
         <Route path="/women" element={<Women />} />
         <Route path="/kids" element={<Kids />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <PageFooter />
     </div>
