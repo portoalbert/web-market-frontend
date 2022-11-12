@@ -13,9 +13,15 @@ export default function Home() {
       <div className="homelinks">
         <h2>Shop By Category</h2>
         <div className="homelinkslist">
-          <Link to="/men">Men</Link>
-          <Link to="/women">Women</Link>
-          <Link to="/kids">Kids</Link>
+          <Link to="/men">
+            <u>Men</u>
+          </Link>
+          <Link to="/women">
+            <u>Women</u>
+          </Link>
+          <Link to="/kids">
+            <u>Kids</u>
+          </Link>
         </div>
       </div>
       <Carousel />
