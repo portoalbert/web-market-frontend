@@ -1,13 +1,17 @@
 import React from "react";
 import tempPic from "../img/placeholder.png";
 
-export default function ShopCard() {
+export default function ShopCard(props) {
   return (
     <div className="shopcard">
-      <img src={tempPic} alt="Temporary" />
-      <h3>Item Name</h3>
-      <h4>Item discription</h4>
-      <h4>Item Price</h4>
+      <div className="shoptopdiv">
+        <img src={props.picture} alt="Temporary" />
+      </div>
+      <div className="text">
+        <h4>${props.price} </h4>
+        <h3> {props.name} </h3>
+        <h4>{props.description} </h4>
+      </div>
     </div>
   );
 }

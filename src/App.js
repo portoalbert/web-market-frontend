@@ -9,6 +9,7 @@ import PageFooter from "./components/PageFooter";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
 import Wishlist from "./pages/Wishlist";
+import NewItem from "./pages/NewItem";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/newitem" element={<NewItem />} />
       </Routes>
       <PageFooter />
     </div>

@@ -152,20 +152,61 @@ background-color: aquamarine;
 .shopcard {
   width: 200px;
   height: 400px;
+  padding: 10px;
+}
+.shopcard:hover{
+  scale: 1.1;
 }
 .shopcard img {
   width: 200px;
-  height: 300px;
-  object-fit: contain;
+  height: 250px;
+  object-fit: cover;
+}
+.shoptopdiv {
+  height: 220px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+  margin-left: 5px;
+  gap: 2px;
+}
+.text h4, .text h3 {
+  margin: 0;
+}
+.text h3 {
+  font-weight: 400;
+  font-size: 18px;
+}
+.text h4 {
+  font-weight: 100;
+  font-size: 14px;
+}
+.toplinks {
+  display: flex;
+  flex-direction: column;
+}
+.toplinks span{
+  display: flex;
+  margin-left: 50px;
 }
 .itemlistmain{
   max-height: fit-content;
   overflow: scroll;
   margin: 0;
 }
+.itemlistmain button {
+  margin: 20px;
+}
 .itemgrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   justify-items: center;
+  gap: 20px;
 }
