@@ -210,3 +210,45 @@ background-color: aquamarine;
   justify-items: center;
   gap: 20px;
 }
+.inventorylist {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  padding-left: 40px;
+}
+.inventorylistitem {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: repeat(10,1fr);
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 10px;
+}
+.inventorylistitem div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.inventorylistitem h4 {
+  margin: 0;
+}
+.inventorylist img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  overflow: hidden;
+}
+.inventorylistitem button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
