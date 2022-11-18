@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import ShopCard from "./ShopCard";
 import { useEffect, useState } from "react";
 
-export default function ItemList() {
+export default function ItemList(props) {
   const [mongoItems, setMongoItems] = useState([]);
+  const urlId = props.id;
   const fetchData = async () => {
-    const response = await fetch("http://localhost:8080/");
-    // fetch
+    const response = await fetch(`http://localhost:8080/${urlId}`);
     const data = await response.json();
+    console.log(data);
     setMongoItems(data);
   };
   useEffect(() => {

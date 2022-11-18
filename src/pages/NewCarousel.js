@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function NewItem() {
+export default function NewCarousel() {
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -18,7 +18,7 @@ export default function NewItem() {
   });
   async function submitHandler() {
     //Post (CREATE)
-    const res = await fetch("http://localhost:8080/add_item", {
+    const res = await fetch("http://localhost:8080/add_item_carousel", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data), // body data type must match "Content-Type" header
@@ -85,7 +85,7 @@ export default function NewItem() {
           />
           <label htmlFor="name">Picture URL</label>
         </div>
-        <Link to="/newitem">
+        <Link to="/newitemcarousel">
           <button type="submit" onClick={() => submitHandler()}>
             Submit
           </button>

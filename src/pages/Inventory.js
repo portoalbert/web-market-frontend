@@ -20,9 +20,14 @@ export default function Inventory() {
   }
   async function removeHandler(id) {
     console.log(id);
-    await fetch(`http://localhost:8080/item/${id}`, {
+    const res = await fetch(`http://localhost:8080/item/${id}`, {
       method: "DELETE",
     });
+    fetchData();
+    const data = await res.json();
+    if (data.acknowledged === true) {
+      return alert("Item Deleted Successfully");
+    }
   }
   return (
     <div className="inventorylist">

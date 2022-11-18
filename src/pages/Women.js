@@ -5,7 +5,7 @@ export default function Women() {
   return (
     <div>
       <h1>Woman</h1>
-      <ItemList />
+      <ItemList id="women" />
     </div>
   );
 }

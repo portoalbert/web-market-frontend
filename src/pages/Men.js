@@ -4,9 +4,9 @@ import ShopCard from "../components/ShopCard";
 
 export default function Men() {
   return (
-    <div>
+    <div className="mainmen">
       <h1>Men</h1>
-      <ItemList />
+      <ItemList id="men" />
     </div>
   );
 }

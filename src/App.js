@@ -11,6 +11,7 @@ import Checkout from "./pages/Checkout";
 import Wishlist from "./pages/Wishlist";
 import NewItem from "./pages/NewItem";
 import Inventory from "./pages/Inventory";
+import NewCarousel from "./pages/NewCarousel";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/newitem" element={<NewItem />} />
+        <Route path="/newitemcarousel" element={<NewCarousel />} />
         <Route path="/inventory" element={<Inventory />} />
       </Routes>
       <PageFooter />

@@ -46,7 +46,14 @@ export default function Carousel() {
   const [currentCards, setCurrentCards] = useState([]);
   const [nextCards, setNextCards] = useState([]);
   const [carouselToggle, setCarouselToggle] = useState(true);
+  const [carouselList, setCarouselList] = useState([]);
 
+  const fetchData = async () => {
+    const response = await fetch("http://localhost:8080/carousel");
+    const data = await response.json();
+    setCarouselList(data);
+    console.log(carouselList);
+  };
   function cardShuffler() {
     const tempArray = [];
     const tempArrayTwo = [];
@@ -67,6 +74,7 @@ export default function Carousel() {
     }
   }
   useEffect(() => {
+    fetchData();
     cardShuffler();
   }, []);
   return (
