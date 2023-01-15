@@ -50,12 +50,15 @@ body{
 }
 .header {
   grid-row: 1/2;
-  background-color: antiquewhite;
+  background-color: white;
   display: flex;
   flex: 1;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+}
+.logo img {
+  height: 48px;
 }
 .links {
   display: flex;
@@ -95,13 +98,37 @@ a {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+  background: no-repeat url("https://t4.ftcdn.net/jpg/04/27/05/91/360_F_427059127_R0FObXwmYH889CasqxK3WjhnQlSnDFlU.jpg");
+  background-size: cover;
+  padding: 20px;
+}
+.homelinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .homelinkslist {
   display: flex;
   flex-direction: column;
   align-content: flex-start;
   justify-content: left;
+  gap: 10px;
 }
+.homelinks h2 {
+  background-color: white;
+  width: fit-content;
+}
+.mainBtn {
+  background-color: white;
+  padding: 16px;
+  width: 150px;
+  font-size: 18px;
+}
+.mainBtn :hover {
+  scale: 1.1;
+  background-color: gray;
+}
+
 .carousel img {
   width: 33%
 }
@@ -122,8 +149,12 @@ a {
   overflow: hidden;
   align-items: center;
 }
+#buttonleft, #buttonright {
+  background-color: transparent ;
+  border: none;
+}
 .card {
-background-color: aquamarine;
+background-color: white;
 }
 .loginmain {
   margin-top: 10%;

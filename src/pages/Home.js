@@ -14,13 +14,20 @@ export default function Home() {
         <h2>Shop By Category</h2>
         <div className="homelinkslist">
           <Link to="/men">
-            <u>Men</u>
+            <button className="mainBtn">
+              <u>Men</u>
+            </button>
           </Link>
           <Link to="/women">
-            <u>Women</u>
+            <button className="mainBtn">
+              {" "}
+              <u>Women</u>{" "}
+            </button>
           </Link>
           <Link to="/kids">
-            <u>Kids</u>
+            <button className="mainBtn">
+              <u>Kids</u>
+            </button>
           </Link>
         </div>
       </div>
