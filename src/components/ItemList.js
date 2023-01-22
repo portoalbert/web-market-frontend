@@ -7,14 +7,15 @@ export default function ItemList(props) {
   const [mongoItems, setMongoItems] = useState([]);
   const urlId = props.id;
   const fetchData = async () => {
-    const response = await fetch(`http://localhost:8080/${urlId}`);
+    const response = await fetch(`http://localhost:8080/item/${urlId}`);
     const data = await response.json();
-    console.log(data);
     setMongoItems(data);
   };
+
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div className="itemlistmain">
       <div className="toplinks">

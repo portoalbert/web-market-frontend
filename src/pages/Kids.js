@@ -5,7 +5,7 @@ export default function Kids() {
   return (
     <div>
       <h1>Kids</h1>
-      <ItemList />
+      <ItemList id="kids" />
     </div>
   );
 }

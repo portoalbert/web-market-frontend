@@ -51,20 +51,25 @@ export default function Carousel() {
   const [carouselList, setCarouselList] = useState([]);
 
   const fetchData = async () => {
-    const response = await fetch("http://localhost:8080/");
-    const data = await response.json();
-    setCarouselList(data);
-    console.log(carouselList, "Carousel List");
+    try {
+      const response = await fetch("http://localhost:8080/carousel");
+      const data = await response.json();
+      cardShuffler(data);
+      setCarouselList(data);
+    } catch {
+      console.log("Erro fetching carousel");
+    }
   };
-  function cardShuffler() {
+
+  function cardShuffler(myarray) {
     const tempArray = [];
     const tempArrayTwo = [];
-    tempArray.push(carouselList[0]);
-    tempArray.push(carouselList[1]);
-    tempArray.push(carouselList[2]);
-    tempArrayTwo.push(carouselList[3]);
-    tempArrayTwo.push(carouselList[4]);
-    tempArrayTwo.push(carouselList[5]);
+    tempArray.push(myarray[0]);
+    tempArray.push(myarray[1]);
+    tempArray.push(myarray[2]);
+    tempArrayTwo.push(myarray[3]);
+    tempArrayTwo.push(myarray[4]);
+    tempArrayTwo.push(myarray[5]);
     setCurrentCards(tempArray);
     setNextCards(tempArrayTwo);
   }
@@ -76,9 +81,7 @@ export default function Carousel() {
     }
   }
   useEffect(() => {
-    console.log("fetching data");
     fetchData();
-    cardShuffler();
   }, []);
   return (
     <div className="carouselmain">
@@ -86,22 +89,26 @@ export default function Carousel() {
         <img src={arrowIconLeft} alt="Placeholder " />
       </button>
       {carouselToggle ? (
-        <div className="carousel">
+        <div className="carousel firstslide">
           {currentCards.map((item, index) => (
             <div className="card" key={index}>
               <img src={item.picture} alt="Placeholder " />
-              <h3>{item.name}</h3>
-              <h4>${item.price}</h4>
+              <div className="cardtext">
+                <h3>{item.name}</h3>
+                <h4>${item.price}</h4>
+              </div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="carousel">
+        <div className="carousel secondslide">
           {nextCards.map((item, index) => (
             <div className="card" key={index}>
               <img src={item.picture} alt="Placeholder " />
-              <h3>{item.name}</h3>
-              <h4>{item.price}</h4>
+              <div className="cardtext">
+                <h3>{item.name}</h3>
+                <h4>${item.price}</h4>
+              </div>
             </div>
           ))}
         </div>
