@@ -52,7 +52,9 @@ export default function Carousel() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:8080/carousel");
+      const response = await fetch(
+        "https://web-market-backend.onrender.com/carousel"
+      );
       const data = await response.json();
       cardShuffler(data);
       setCarouselList(data);

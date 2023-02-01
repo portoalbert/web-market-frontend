@@ -7,23 +7,29 @@ export default function Inventory() {
   const [inventorList, setInventoryList] = useState([]);
 
   const fetchData = async () => {
-    const response = await fetch("http://localhost:8080/");
+    const response = await fetch("https://web-market-backend.onrender.com/");
     const data = await response.json();
     setInventoryList(data);
   };
 
   const editHandler = async (id) => {
-    const res = await fetch(`http://localhost:8080/item/${id}`, {
-      method: "POST",
-    });
+    const res = await fetch(
+      `https://web-market-backend.onrender.com/item/${id}`,
+      {
+        method: "POST",
+      }
+    );
     // fetchData();
   };
 
   async function removeHandler(id) {
     console.log(id);
-    const res = await fetch(`http://localhost:8080/item/${id}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `https://web-market-backend.onrender.com/item/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
 
     fetchData();
 
@@ -36,10 +42,13 @@ export default function Inventory() {
   // Arrow Function vs Named Function
 
   const handleSave = async () => {
-    const res = await fetch(`http://localhost:8080/item/${itemId}`, {
-      method: "POST",
-      body: formItem,
-    });
+    const res = await fetch(
+      `https://web-market-backend.onrender.com/item/${itemId}`,
+      {
+        method: "POST",
+        body: formItem,
+      }
+    );
   };
 
   const handleChange = async (event) => {

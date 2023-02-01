@@ -7,7 +7,9 @@ export default function ItemList(props) {
   const [mongoItems, setMongoItems] = useState([]);
   const urlId = props.id;
   const fetchData = async () => {
-    const response = await fetch(`http://localhost:8080/item/${urlId}`);
+    const response = await fetch(
+      `https://web-market-backend.onrender.com/item/${urlId}`
+    );
     const data = await response.json();
     setMongoItems(data);
   };
