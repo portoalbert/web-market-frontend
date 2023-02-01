@@ -18,11 +18,14 @@ export default function NewCarousel() {
   });
   async function submitHandler() {
     //Post (CREATE)
-    const res = await fetch("http://localhost:8080/add_item_carousel", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    });
+    const res = await fetch(
+      "https://web-market-backend.onrender.com/add_item_carousel",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data), // body data type must match "Content-Type" header
+      }
+    );
     setData(resetData);
     console.log(res.json());
   }
