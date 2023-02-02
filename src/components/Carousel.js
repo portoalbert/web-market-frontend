@@ -1,48 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import getArray from "../assets/PRODUCTSARRAY.JS";
 import arrowIconLeft from "../img/leftarrow.png";
 import arrowIconRight from "../img/rightarrow.png";
-
-import tempPic from "../img/placeholder.png";
-const PRODUCTSARRAY = [
-  {
-    name: "Product1",
-    price: 9.99,
-    description: "Placeholder description",
-    image: tempPic,
-  },
-  {
-    name: "Product2",
-    price: 9.99,
-    description: "Placeholder description",
-    image: tempPic,
-  },
-  {
-    name: "Product3",
-    price: 9.99,
-    description: "Placeholder description",
-    image: tempPic,
-  },
-  {
-    name: "Product4",
-    price: 9.99,
-    description: "Placeholder description",
-    image: tempPic,
-  },
-  {
-    name: "Product5",
-    price: 9.99,
-    description: "Placeholder description",
-    image: tempPic,
-  },
-  {
-    name: "Product6",
-    price: 9.99,
-    description: "Placeholder description",
-    image: tempPic,
-  },
-];
 
 export default function Carousel() {
   const [currentCards, setCurrentCards] = useState([]);
@@ -76,14 +35,19 @@ export default function Carousel() {
     setNextCards(tempArrayTwo);
   }
   function onClickHandler() {
+    clearTimeout();
+    setTimeout(() => onClickHandler(), 7000); ///Added timer to carousel
     if (carouselToggle === true) {
       setCarouselToggle(false);
+      return;
     } else {
       setCarouselToggle(true);
+      return;
     }
   }
   useEffect(() => {
     fetchData();
+    setTimeout(() => onClickHandler(), 5000);
   }, []);
   return (
     <div className="carouselmain">

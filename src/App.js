@@ -26,7 +26,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/newitem" element={<NewItem />} />
-        <Route path="/newitemcarousel" element={<NewCarousel />} />
+        <Route path="/newcarousel" element={<NewCarousel />} />
         <Route path="/inventory" element={<Inventory />} />
       </Routes>
       <PageFooter />

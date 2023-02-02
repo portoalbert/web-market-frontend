@@ -16,6 +16,7 @@ export default function NewCarousel() {
     price: "",
     picture: "",
   });
+
   async function submitHandler() {
     //Post (CREATE)
     const res = await fetch(
