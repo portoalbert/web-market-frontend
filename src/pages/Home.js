@@ -15,7 +15,9 @@ export default function Home() {
         <div className="homelinkslist">
           <Link to="/men">
             <button className="mainBtn">
-              <u>Men</u>
+              <span>
+                <u>Men</u>
+              </span>
             </button>
           </Link>
           <Link to="/women">

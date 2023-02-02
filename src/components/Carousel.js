@@ -35,8 +35,6 @@ export default function Carousel() {
     setNextCards(tempArrayTwo);
   }
   function onClickHandler() {
-    clearTimeout();
-    setTimeout(() => onClickHandler(), 7000); ///Added timer to carousel
     if (carouselToggle === true) {
       setCarouselToggle(false);
       return;

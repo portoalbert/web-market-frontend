@@ -57,12 +57,29 @@ body{
   align-items: center;
   padding: 30px;
 }
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+}
+.logo h3 {
+  margin: 0;
+}
+.logo:hover {
+  scale: 1.15;
+}
 .logo img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 48px;
+  
 }
 .links {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   font-weight: 600;
   margin-left: 150px;
 }
@@ -101,7 +118,7 @@ a {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  background: no-repeat url("https://t4.ftcdn.net/jpg/04/27/05/91/360_F_427059127_R0FObXwmYH889CasqxK3WjhnQlSnDFlU.jpg");
+  background: no-repeat url("https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/enUS/Images/sp087_ss23_valentines-day-mh-lg-ftw-w-d_tcm221-988359.jpg");
   background-size: cover;
   padding: 20px;
 }
@@ -117,8 +134,18 @@ a {
   justify-content: left;
   gap: 10px;
 }
+.homelinks a {
+  box-shadow: 4px 5px 5px white;
+    
+}
 .homelinkslist a:hover {
   scale: 1.15;
+}
+.homelinkslist a:active {
+  scale: 1.15;
+  box-shadow: 0 5px #666;
+  transform: translateX(4px);
+  transform: translateY(4px);
 }
 .homelinks h2 {
   background-color: white;
@@ -130,10 +157,6 @@ a {
   width: 150px;
   font-size: 18px;
   cursor: pointer;
-}
-.mainBtn :hover {
-  scale: 1.1;
-  background-color: gray;
 }
 
 .carousel img {
@@ -340,6 +363,7 @@ scale: 1.1;
 .mainmen {
   width: 100%;
 }
+
 
 @-webkit-keyframes slideIn {
   0% {

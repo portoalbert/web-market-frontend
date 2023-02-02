@@ -10,8 +10,10 @@ export default function Navbar() {
     <div className="header">
       <div className="logo">
         <Link to="/">
-          {" "}
           <img src={logoIcon} alt="" />
+        </Link>
+        <Link to="/">
+          <h3>Web Market</h3>
         </Link>
       </div>
       <div className="links">
