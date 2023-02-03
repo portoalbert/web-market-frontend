@@ -363,6 +363,17 @@ scale: 1.1;
 .mainmen {
   width: 100%;
 }
+.adminmain {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.adminmain ul {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  list-style: none;
+}
 
 
 @-webkit-keyframes slideIn {

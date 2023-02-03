@@ -4,6 +4,7 @@ import loginIcon from "../img/login.png";
 import wishListIcon from "../img/wishlist.png";
 import cartIcon from "../img/cart.png";
 import logoIcon from "../img/logo1.png";
+import iconAdm from "../img/adminicon.avif";
 
 export default function Navbar() {
   return (
@@ -26,15 +27,6 @@ export default function Navbar() {
         <Link to="/kids">
           <u>Kids</u>
         </Link>
-        <Link to="/NewItem">
-          <u>TEMP New Item</u>
-        </Link>
-        <Link to="/NewCarousel">
-          <u>TEMP New Carousel</u>
-        </Link>
-        <Link to="/inventory">
-          <u>TEMP Inventory</u>
-        </Link>
       </div>
       <div className="search">
         <input type="text" name="search" placeholder="Search" />
@@ -46,6 +38,9 @@ export default function Navbar() {
         </Link>
         <Link to="/checkout">
           <img src={cartIcon} alt="Shopping Cart" />
+        </Link>
+        <Link to="/admin">
+          <img src={iconAdm} alt="Admin" />
         </Link>
       </div>
     </div>

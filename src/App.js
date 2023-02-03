@@ -12,6 +12,7 @@ import Wishlist from "./pages/Wishlist";
 import NewItem from "./pages/NewItem";
 import Inventory from "./pages/Inventory";
 import NewCarousel from "./pages/NewCarousel";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/newitem" element={<NewItem />} />
         <Route path="/newcarousel" element={<NewCarousel />} />
         <Route path="/inventory" element={<Inventory />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <PageFooter />
     </div>
