@@ -349,6 +349,9 @@ scale: 1.1;
   font-size: 16px;
   border-radius: 12px;
 }
+.itemtotal {
+  grid-column: 10/10;
+}
 .mainmen {
   width: 100%;
 }
