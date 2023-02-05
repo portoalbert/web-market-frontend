@@ -14,6 +14,7 @@ export default function Inventory() {
     );
     const data = await response.json();
     const carouselData = await secondResponse.json();
+    console.log(data);
     setInventoryList(data);
     setCarouselList(carouselData);
   };

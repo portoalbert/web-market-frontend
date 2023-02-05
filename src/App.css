@@ -198,17 +198,6 @@ a {
   cursor: pointer;
 }
 
-/* .firstslide {
-  -webkit-animation: slideIn 2s forwards;
-  -moz-animation: slideIn 2s forwards;
-  animation: slideIn 2s forwards;
-}
-.secondslide {
-  -webkit-animation: slideOut 2s forwards;
-  -moz-animation: slideInOut 2s forwards;
-  animation: slideOut 2s forwards;
-} */
-
 .card img {
  width: 200px;
 
@@ -374,53 +363,25 @@ scale: 1.1;
   gap: 100px;
   list-style: none;
 }
-
-
-@-webkit-keyframes slideIn {
-  0% {
-    transform: translateX(-900px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.cart {
+  display: flex;
+  position: relative;
 }
-@-moz-keyframes slideIn {
-  0% {
-    transform: translateX(-900px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+#itemqnt {
+  position: absolute;
+  top: -23px;
+  right: -5px;
+  font-size: 12px;
 }
-@keyframes slideIn {
-  0% {
-    transform: translateX(-900px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+#invqnt {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
-@-webkit-keyframes slideOut {
-  0% {
-    transform: translateX(900px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@-moz-keyframes slideOut {
-  0% {
-    transform: translateX(900px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideOut {
-  0% {
-    transform: translateX(900px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+#invqnt button {
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  padding: 0;
 }
