@@ -13,6 +13,7 @@ import NewItem from "./pages/NewItem";
 import Inventory from "./pages/Inventory";
 import NewCarousel from "./pages/NewCarousel";
 import Admin from "./pages/Admin";
+import NewUser from "./pages/NewUser";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/newcarousel" element={<NewCarousel />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/new_user" element={<NewUser />} />
       </Routes>
       <PageFooter />
     </div>

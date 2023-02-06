@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Checkout() {
-  let testTotal = 0;
   const [sampleList, setSampleList] = useState([
     {
       _id: "6376f0b8b3008d6ef5fe83d0",
@@ -59,6 +58,8 @@ export default function Checkout() {
       quantity: 1,
     },
   ]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const bagItemQnt = sampleList.length;
   const onClickHandlerPlus = (id, sign) => {
     const tempArray = [];
     sampleList.map((item) => {
@@ -69,6 +70,7 @@ export default function Checkout() {
       return console.log;
     });
     setSampleList(tempArray);
+    totalPriceChecker();
   };
   const onClickHandlerMinus = (id) => {
     const tempArray = [];
@@ -80,58 +82,95 @@ export default function Checkout() {
       return console.log;
     });
     setSampleList(tempArray);
+    totalPriceChecker();
   };
+  function totalPriceChecker() {
+    let tempTotal = 0;
+    sampleList.map((item) => (tempTotal += item.price * item.quantity));
+    setTotalPrice(tempTotal);
+  }
+  useEffect(() => {
+    totalPriceChecker();
+  }, []);
   return (
     <div>
-      <div className="inventorylist">
+      <div className="checkouttitle">
+        <h1>YOUR BAG</h1>
+        <h3>
+          Total: ({bagItemQnt} Items) <b>${totalPrice.toFixed(2)}</b>{" "}
+        </h3>
+        <h4>
+          Items in your bag are not reserved — check out now to make them yours.
+        </h4>
+      </div>
+      <div className="checkoutlist">
         {sampleList.map((item, index) => {
-          testTotal += item.price * item.quantity;
           return (
-            <div key={item._id} className="inventorylistitem">
-              <div>
+            <div key={item._id} className="checkoutlistitem">
+              <div className="checkoutleft">
                 <img src={item.picture} alt="item" />
               </div>
-              <div>
-                <h4>Name</h4>
-                {item.name}
-              </div>
-              <div>
-                <h4>Description</h4>
-                {item.description}
-              </div>
-              <div>
-                <h4>Category</h4>
-                {item.category}
-              </div>
-              <div>
-                <h4>Price</h4>${item.price}
-              </div>
-              <div>
-                Quantity
-                <div id="invqnt">
-                  <button
-                    className="cartqntbuttn"
-                    onClick={() => onClickHandlerMinus(item._id)}
-                  >
-                    -
-                  </button>
-                  {item.quantity}
-                  <button
-                    className="cartqntbuttn"
-                    onClick={() => onClickHandlerPlus(item._id)}
-                  >
-                    +
-                  </button>
+
+              <div className="checkoutright">
+                <div className="checkoutrightdescription">
+                  <div>{item.name}</div>
+                  <div>{item.description}</div>
+                  <div>
+                    <h4>Category</h4>
+                    {item.category}
+                  </div>
                 </div>
-              </div>
-              <div className="itemtotal">
-                <b>Item Total</b> <span>${item.price * item.quantity}</span>
+                <div className="checkoutqnt">
+                  <div id="invqnt">
+                    <button
+                      className="cartqntbuttn"
+                      onClick={() => onClickHandlerMinus(item._id)}
+                    >
+                      -
+                    </button>
+                    {item.quantity}
+                    <button
+                      className="cartqntbuttn"
+                      onClick={() => onClickHandlerPlus(item._id)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                <div className="itemtotal">${item.price * item.quantity}</div>
               </div>
             </div>
           );
         })}
         <div className="total">
-          <h3>Total ${testTotal}</h3>
+          <div className="totalwrapper">
+            <h2>ORDER SUMMARY</h2>
+            <div className="totallineone">
+              <div>
+                {" "}
+                <h4>{bagItemQnt} items</h4>
+              </div>
+              <div>${totalPrice.toFixed(2)}</div>
+            </div>
+            <div className="totallinetwo">
+              <h4>Sales Tax</h4>
+              <div>-</div>
+            </div>
+            <div className="totallinethree">
+              <h4>Delivery </h4> <span> FREE </span>
+            </div>
+            <h3>Total ${totalPrice.toFixed(2)}</h3>
+          </div>
+          <div className="buy">
+            <button
+              onClick={() => {
+                alert("Service Unavailable, Please try again in 5 minutes");
+              }}
+            >
+              BUY IT
+            </button>
+          </div>
         </div>
       </div>
     </div>

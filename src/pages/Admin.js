@@ -22,6 +22,12 @@ export default function Admin() {
             <u>Full Inventory</u>
           </Link>
         </li>
+        <li>
+          {" "}
+          <Link to="/new_user">
+            <u>New User</u>
+          </Link>
+        </li>
       </ul>
     </div>
   );
